@@ -1,0 +1,13 @@
+name: demo-param
+on:
+  push:
+    branches: [ main ]
+jobs:
+  echo-parameter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: return-step
+        id: my-step
+        run: echo "my_field=My Value Is 42" >> $GITHUB_OUTPUT
+      - name: receiver-step
+        run: echo "my value is ${{ steps.my-step.outputs.my_field }}
