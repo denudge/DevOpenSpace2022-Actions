@@ -1,0 +1,9 @@
+name: demo-2
+on:
+  workflow_dispatch:
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo Hello DevOpenSpace
